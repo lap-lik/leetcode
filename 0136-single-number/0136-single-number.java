@@ -1,17 +1,17 @@
 class Solution {
     public int singleNumber(int[] nums) {
-        List<Integer> arr = new ArrayList<>();
+        Map<Integer, Integer> arr = new HashMap<>();
         if (nums.length == 1) {
             return nums[0];
         }
         for (int i = 0; i < nums.length; i++) {
             Integer temp = nums[i];
-            if (arr.contains(temp)){
+            if (arr.containsKey(temp)){
                 arr.remove(temp);
             } else {
-                arr.add(temp);
+                arr.put(temp, temp);
             }
         }
-        return arr.get(0);
+        return arr.values().stream().findFirst().get();
     }
 }
