@@ -1,9 +1,10 @@
 class Solution {
     public boolean isValid(String s) {
-       while (s.contains("()") || s.contains("[]") || s.contains("{}")) {
+       int length = s.length();
+        for (int i = 0; i < length; i++) {
             s = s.replaceAll("\\(\\)", "")
-                .replaceAll("\\[\\]", "")
-                .replaceAll("\\{\\}", "");
+                    .replaceAll("\\[]", "")
+                    .replaceAll("\\{}", "");
         }
         return s.isEmpty();
     }
