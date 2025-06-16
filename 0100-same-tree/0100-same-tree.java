@@ -28,6 +28,9 @@ class Solution {
         while(!queueP.isEmpty()){
             TreeNode nodeP = queueP.poll();
             TreeNode nodeQ = queueQ.poll();
+            if(nodeP.val != nodeQ.val){
+                return false;
+            }
 
             TreeNode nodePLeft = nodeP.left;
             TreeNode nodeQLeft = nodeQ.left;
