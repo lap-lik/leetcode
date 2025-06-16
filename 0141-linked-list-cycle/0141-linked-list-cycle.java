@@ -24,15 +24,18 @@ public class Solution {
         if (head == null || head.next == null){
             return false;
         }
-        
+
+        ListNode slow = head;
         ListNode fast = head;
+
         while (fast != null && fast.next != null) {
-            head = head.next;
+            slow = slow.next;
             fast = fast.next.next;
-            if (fast == head){
+            if (fast == slow){
                 return true;
             }
         }
+
         return false;
     }
 }
