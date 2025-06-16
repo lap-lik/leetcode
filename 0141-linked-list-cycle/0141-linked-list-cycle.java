@@ -21,6 +21,21 @@ public class Solution {
 
         // return false;
 
+        // if (head == null || head.next == null){
+        //     return false;
+        // }
+        
+        // ListNode fast = head;
+        // while (fast != null && fast.next != null) {
+        //     head = head.next;
+        //     fast = fast.next.next;
+        //     if (fast == head){
+        //         return true;
+        //     }
+        // }
+        // System.gc();
+        // return false;
+
         if (head == null || head.next == null){
             return false;
         }
@@ -35,7 +50,7 @@ public class Solution {
                 return true;
             }
         }
-
+        System.gc();
         return false;
     }
 }
