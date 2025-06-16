@@ -11,13 +11,9 @@
  */
 public class Solution {
     public boolean hasCycle(ListNode head) {
-        if (head == null){
-            return false;
-        }
         Set<ListNode> checkingSet = new HashSet();
-        while(head.next != null){
-          boolean temp = checkingSet.add(head);
-          if (!temp){
+        while(head != null){
+          if (!checkingSet.add(head)){
               return true;
           }
           head = head.next;
